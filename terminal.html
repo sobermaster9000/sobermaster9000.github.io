@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>notpythonfile</title>
+</head>
+<style>
+    @font-face {
+        font-family: "jetbrainz";
+        src: url("JetBrainsMono-VariableFont_wght.ttf");
+    }
+    body {
+        font-family: "jetbrainz";
+        padding: 10px 50px;
+        background: black;
+        color: lawngreen;
+    }
+    h2 {
+        margin: 10px;
+    }
+    .currentcursor span::after {
+        content: "";
+        /* position: absolute; */
+        /* top: 0; */
+        display: inline-block;
+        vertical-align: top;
+        background-color: lawngreen;
+        width: 10px;
+        height: 32px;
+        -webkit-animation: blink 1s step-end infinite;
+        animation: blink 1s step-end infinite
+    }
+    @-webkit-keyframes blink {
+        0% {opacity: 1.0;}
+        50% {opacity: 0.0;}
+        100% {opacity: 1.0;}
+    }
+    @-keyframes blink {
+        0% {opacity: 1.0;}
+        50% {opacity: 0.0;}
+        100% {opacity: 1.0;}
+    }
+</style>
+<body>
+    <h2 id="line1" hidden>> <span></span></h2>
+    <h2 id="line2" hidden>> <span></span></h2>
+    <h2 id="line3" hidden>> <span></span></h2>
+    <h2 id="line4" hidden>> <span></span></h2>
+    <h2 id="line5" hidden>> <span></span></h2>
+    <h2 id="line6" hidden>> <span></span></h2>
+    <h2 id="line7" hidden>> <span></span></h2>
+    <h2 id="line8" hidden>> <span></span></h2>
+    <h2 id="line9" hidden>> <span></span></h2>
+    <h2 id="line10" hidden>> <span></span></h2>
+    <h2 id="line11" hidden>> <span></span></h2>
+    <h2 id="line12" hidden>> <span></span></h2>
+    <h2 id="line13" hidden>> <span></span></h2>
+    <h2 id="line14" hidden>> <span></span></h2>
+    <h2 id="line15" hidden>> <span></span></h2>
+    <h2 id="line16" hidden>> <span></span></h2>
+    <h2 id="line17" hidden>> <span></span></h2>
+    <h2 id="line18" hidden>> <span></span></h2>
+</body> 
+<script>
+    const lines = [
+        "Yo kuya Yuan",
+        "Wazzup?",
+        "It seems that I have clutched this palanca",
+        "(Totally not rushed haha)",
+        "Hmmmm...",
+        "I just wanna say thank you..",
+        "For being a part of my unfinished journey here in Pisay",
+        "Especially sa SUDO, when that was still around haha",
+        "I guess I could also thank you",
+        "For being a part of my programming journey",
+        "I'm not really one for words..",
+        "So I'm pretty much reaching the end of my message haha",
+        "Unless Joseph's the one talking",
+        "(you know what I mean.. I hope you do haha)",
+        "Congratulations on your graduation!",
+        "And may this not be the last time we meet!",
+        "Until next time :)",
+        ""
+    ];
+
+    let line = 1;
+    let char = 1;
+
+    function showChars(){
+        if(char <= lines[line - 1].length){
+            document.querySelector("#line" + (line).toString() + " span").textContent = lines[line - 1].substring(0, char);
+            setTimeout(showChars, 80);
+            char++;
+        }
+        else{
+            char = 1;
+            line++;
+        }
+    }
+
+    function showLine(){
+        if(line <= lines.length){
+            if(line > 1)
+                document.getElementById("line" + (line - 1).toString()).classList.remove("currentcursor");
+            const header = document.getElementById("line" + line.toString());
+            header.hidden = false;
+            header.classList.add("currentcursor");
+            setTimeout(showLine, 700 + (lines[line - 1].length + 1) * 80);
+            showChars();
+        }
+    }
+
+    showLine();
+</script>
+</html>
