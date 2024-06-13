@@ -43,7 +43,7 @@
     }
 </style>
 <body>
-    <h2 id="line1" hidden>> <span></span></h2>
+    <h2 id="line1" class="currentcursor">> <span></span></h2>
     <h2 id="line2" hidden>> <span></span></h2>
     <h2 id="line3" hidden>> <span></span></h2>
     <h2 id="line4" hidden>> <span></span></h2>
@@ -111,6 +111,6 @@
         }
     }
 
-    showLine();
+    setTimeout(showLine, 3000);
 </script>
 </html>
