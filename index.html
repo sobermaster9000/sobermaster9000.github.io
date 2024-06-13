@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIKE</title>
+</head>
+<style>
+    @font-face {
+        font-family: 'lucidaBSOD';
+        src: url(lucida-bsod.ttf);
+    }
+    body {
+        background: blue;
+        font-family: 'lucidaBSOD';
+        color: white;
+    }
+    div {
+        text-align: center;
+    }
+    h1 {
+        font-size: 750%;
+    }
+    a {
+        text-decoration: none;
+    }
+    a:hover {
+        color: white;
+    }
+</style>
+<body onload="maxWindow()">
+    <div>
+        <h1>YOUR PC HAS BEEN HACKED BROOO!!!</h1>
+        <h3>(FUCK BAT DI MAG FULLSCREEN!?!?)</h3>
+        <br>
+        <p>Just kidding :)</p>
+        <p>Now go download and run this <a href="lucida-bsod.zip" target="_blank" download>epic python program</a>.</p>
+    </div>
+</body>
+<script>
+    // bro why does this not work
+    function maxWindow(){
+        window.moveTo(0, 0);
+        if(document.all){
+            top.window.resizeTo(screen.availWidth, screen.availHeight);
+        }
+        else if (document.layers || document.getElementById) {
+            if (top.window.outerHeight < screen.availHeight || top.window.outerWidth < screen.availWidth) {
+                top.window.outerHeight = screen.availHeight;
+                top.window.outerWidth = screen.availWidth;
+            }
+        }
+    }
+</script>
+</html>
